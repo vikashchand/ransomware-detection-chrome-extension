@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "vikash",
+  "version": "1.0.0",
+  "description": "Detect ransomeware phishing links on webpages.",
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["*://*/*"],
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "BYNODE-1.png",
+      "32": "BYNODE-1.png",
+      "48": "BYNODE-1.png",
+      "128": "BYNODE-1.png"
+    }
+   
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
